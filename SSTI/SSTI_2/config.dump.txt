@@ -1,0 +1,33 @@
+dict_items(
+    [
+        ('SESSION_COOKIE_DOMAIN', None), 
+        ('JSONIFY_MIMETYPE', 'application/json'), 
+        ('JSONIFY_PRETTYPRINT_REGULAR', True), 
+        ('DEBUG', False), 
+        ('FLAG', 'Hehehe the flag is not here this time'), 
+        ('SESSION_COOKIE_NAME', 'session'), 
+        ('SESSION_COOKIE_SECURE', False), 
+        ('SESSION_COOKIE_HTTPONLY', True), 
+        ('TEMPLATES_AUTO_RELOAD', None), 
+        ('PROPAGATE_EXCEPTIONS', None), 
+        ('TRAP_HTTP_EXCEPTIONS', False), 
+        ('USE_X_SENDFILE', False), 
+        ('PREFERRED_URL_SCHEME', 'http'), 
+        ('PERMANENT_SESSION_LIFETIME', datetime.timedelta(31)), 
+        ('SEND_FILE_MAX_AGE_DEFAULT', datetime.timedelta(0, 43200)), 
+        ('JSON_AS_ASCII', True), 
+        ('SERVER_NAME', None), 
+        ('SESSION_COOKIE_PATH', None), 
+        ('LOGGER_HANDLER_POLICY', 'always'), 
+        ('MAX_CONTENT_LENGTH', None), 
+        ('APPLICATION_ROOT', None), 
+        ('PRESERVE_CONTEXT_ON_EXCEPTION', None), 
+        ('LOGGER_NAME', '__main__'), 
+        ('TESTING', False), 
+        ('EXPLAIN_TEMPLATE_LOADING', False), 
+        ('SECRET_KEY', None), 
+        ('JSON_SORT_KEYS', True), 
+        ('SESSION_REFRESH_EACH_REQUEST', True), 
+        ('TRAP_BAD_REQUEST_ERRORS', False)
+    ]
+)
