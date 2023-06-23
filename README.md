@@ -156,8 +156,13 @@ username: `dddddd`
 password: `600`  
 Le flag nous est ensuite envoyé: `M4ke_@_PyTh0n_K3yg3N_1f_U_W@nT_t0_H4ve_Th3_SakiiR_Gr33t1nGs`
 
-### :x: Auth 200
+### :heavy_check_mark: Auth 200
 
+Encore une fois, sur la page, on a un lien vers [la source PHP](https://auth200.secu-web.blackfoot.dev/index.php?source).  
+Et on peut aussi y trouver l'algorithm de connection.  
+[Inverser l'algorithm](./Auth/Auth200/decrypt.js) nous donne `hard_to_crack_i_guess_lol!!!!`.  
+Flag, qui valide le formulaire du site qui nous donne:  
+flag: `BFS{1_L0v3_t0_x0r_tH1ng5_l1k3_@_p0nY!}`
 
 ## JS
 
