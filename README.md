@@ -161,7 +161,15 @@ Le flag nous est ensuite envoyé: `M4ke_@_PyTh0n_K3yg3N_1f_U_W@nT_t0_H4ve_Th3_Sa
 
 ## JS
 
-### :x: b64js
+### :heavy_check_mark: b64js
+
+Le code source de la page a été mit dans le fichier [index.html](./JS/b64js/index.html).  
+L'input est passé dans btoa puis comparé a pass. Si le même, input = flag.  
+On peut inverser btoa grace a atob et donc connaitre input depuis pass.  
+```javascript
+window.atob("RXZlckhlYXJkT2ZCYXNlNjQ/")
+```
+Flag: `EverHeardOfBase64?`
 
 ### :heavy_check_mark: JS200
 

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <script type="text/javascript">
+        var pass = "RXZlckhlYXJkT2ZCYXNlNjQ/";
+        var input = window.prompt("Enter the flag here : ");
+        var b64input = window.btoa(unescape(encodeURIComponent(input)))
+        if (pass === b64input)
+            alert("Congrats ! You can validate this challenge with the flag BFS{" + input + "}");
+        else
+            alert("Call your mom and tell her you will be late for dinner ;)");
+    </script>
+</body>
+
+</html>
