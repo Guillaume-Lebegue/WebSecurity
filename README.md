@@ -75,7 +75,11 @@ Suposition: Il est mentioné dans le docker-compose que le port n'a pas été fe
 
 ## Obfuscation
 
-### :x: OBF 100
+### :heavy_check_mark: OBF 100
+
+La page HTML a été extraite dans [index.html](./Obfuscation/OBF100/index.html). On peut y voir le script utilisé, notament les conditions et le mot de passe.  
+l'input est comparé à `\x67\x67\x65\x7A`, traduit de l'hexa, on obtien `ggez`.  
+L'utiliser sur le site nous indique qu'il s'aggit du flag.
 
 ### :x: SCRIPT_KIDDING
 
@@ -96,7 +100,13 @@ Suposition: Il est mentioné dans le docker-compose que le port n'a pas été fe
 
 ## JWT
 
-### :x: Mythique 1
+### :heavy_check_mark: Mythique 1
+
+Apres inspection du code source, on peut voir qu'un cookie est recuperé pour s'identifier.  
+Ce [cookie](./JWT/Mythique1/OriginJWT.txt) a la forme d'un JWT.  
+Grace a un site comme https://www.gavinjl.me/edit-jwt-online-alg-none/, qui permet de remplacer seuleument le payload, on peut obtenir ce [token](./JWT/Mythique1/ModJWT.txt).  
+Apres remplacement du cookie sur la page, on peut cliquer sur le bouton et obtenir ce flag:  
+flag: `JwT_m0r3_l1k3_jwP33_xd`
 
 ### :x: Mythique 2
 
@@ -112,7 +122,11 @@ Suposition: Il est mentioné dans le docker-compose que le port n'a pas été fe
 
 ## IFI
 
-### :x: noprotection
+### :heavy_check_mark: noprotection
+
+La page nous indique que le flag est a un endroit evident.  
+En testant, on peut le trouver a cette addresse: https://noprotection.secu-web.blackfoot.dev/flag.html.  
+flag: `y34h_y0u_f0und_m3`
 
 ### :x: filters
 
