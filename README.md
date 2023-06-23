@@ -123,9 +123,22 @@ Suposition: Il est mentioné dans le docker-compose que le port n'a pas été fe
 
 ## Auth
 
-### :x: Auth 50
+### :heavy_check_mark: Auth 50
+
+Le nom de la categorie est auth, on peut donc supposer que la solution a à voir avec la connexion.  
+Sur la page, on peut trouver un lien vers [la source PHP](https://auth50.secu-web.blackfoot.dev/index.php?source).  
+Sur cette page, on peut voir que les inputs sont comparé à un fichier [secret.php](https://auth50.secu-web.blackfoot.dev/secret.php?source) et qu'il contiendrait aussi le flag
 
 ### :x: Auth 100
+
+Sur la page, on voit encore un lien vers [la source PHP](https://auth100.secu-web.blackfoot.dev/index.php?source).  
+On peut y observer l'algorithm pour la connexion.  
+En sachant que `ord` est une fonction prenant un charactere ascii et renvoyant sa valeur decimal, on peut connaitre la solution.
+L'algorithm prend le username, additione la valeur ascii de tous ses characteres et les compares au mot de passe.  
+Sachant que la valeur ascii de `d` est 100, On peut donc prendre:  
+username: `dddddd`  
+password: `600`  
+Le flag nous est ensuite envoyé: `M4ke_@_PyTh0n_K3yg3N_1f_U_W@nT_t0_H4ve_Th3_SakiiR_Gr33t1nGs`
 
 ### :x: Auth 200
 
