@@ -134,4 +134,14 @@ Suposition: Il est mentioné dans le docker-compose que le port n'a pas été fe
 
 ### :x: b64js
 
-### :x: JS200
+### :heavy_check_mark: JS200
+
+Le nom de la categorie est JS, on peut donc supposer que le solution se trouve dans le code de la page.  
+Le code source de la page a été extrait dans le fichier [index.html](./JS/JS200/index.html).  
+Dans ce fichier, on peut voir une variable appelé `flag` non lisible. On peut aussi voir un algorithm pour voir le vrai flag.  
+Cet algorithm a été déplacer dans le fichier [getFlag.js](./JS/JS200/getFlag.js) puis inversé pour obtenir le vrai flag
+
+```
+Commande: node ./JS/JS200/getFlag.js
+Flag: JCVD-approves-this-challenge
+```
