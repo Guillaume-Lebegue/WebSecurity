@@ -116,6 +116,10 @@ flag: `JwT_m0r3_l1k3_jwP33_xd`
 ## SQLI
 
 ### :x: Potionseller
+Après s'etre balader sur la page, nous nous sommes rendu compte que nous n'avions pas acces a la potion n*4.
+Cependant, en fouillant les networks nous avons vu qu'une requête contenait l'id de la potion. Nous pouvions donc modifier cet id pour essayer d'avoir les infos sur la potion 4 !
+Cela nous refusait l'acces a la data mais l'endpoint fonctionnait tout de meme. Étant donnée qu'il s'agissait de la section Injection SQL, nous sommes donc parti sur une tentative d'injection sql directement dans l'url.
+Au debut on recoit un message d'erreur qui nous dis que cela ressemble a du code pour detourner le probleme on peut juste rajouter un operateur SQL AND en faisant une manipulation comme id and id > 3. De cette facon la nous obtenons les informations sur la potion id 4 et donc le flag.
 
 ### :x: Potionseller 2
 
@@ -129,8 +133,21 @@ En testant, on peut le trouver a cette addresse: https://noprotection.secu-web.b
 flag: `y34h_y0u_f0und_m3`
 
 ### :x: filters
+Pour ce challenge, nous avons remarquer qu'il etait possible de changer les langues du site qui nous montrait un chemin de fichier.
+Apres plusieurs recherches dans les sources etc, nous sommes tomber sur ce lien
+`https://www.idontplaydarts.com/2011/02/using-php-filter-for-local-file-inclusion/`
+qui explique comment récuperer du contenu de fichier depuis des urls.
+Par exemple avec `php://filter/convert.base64-encode/resource=index` on peut recuperer du contenu de l'index en base64.
+
+Apres quelques essais nous avons reussi a trouver que en rajoutant
+`lang=php://filter/convert.base64-encode/resource=config`
+Nous obtenions un flag en base64 qu'il nous suffisait ensuite de decoder.
+
 
 ### :x: extprotect
+Pour ce challenge, nous sommes parti avec la meme methodologie que pour le précedent car nous n'avions pas forcement de nouvelles idées.
+Et cela a fonctionner avec un fichier de ressource differents et avec le path suivant:
+`https://filters.secu-web.blackfoot.dev/index.php?lang=php://filter/convert.base64-encode/resource=config.php`
 
 ### :x: remote
 
